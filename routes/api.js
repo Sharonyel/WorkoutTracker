@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Workout = require("../models/workout.js");
+
 // const Exercise = require("../models/exercise.js");
 
 
@@ -22,6 +23,7 @@ router.get("/api/workouts", (req, res) => {
     .sort({ date: -1 })
     .then(dbWorkout => {
       res.json(dbWorkout);
+      console.log(dbWorkout)
     })
     .catch(err => {
       res.status(400).json(err);

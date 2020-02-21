@@ -5,14 +5,16 @@ async function initWorkout() {
     document
       .querySelector("a[href='/exercise?']")
       .setAttribute("href", `/exercise?id=${lastWorkout._id}`);
+      console.log("Last workout duration:", lastWorkout.totalDuration);
 
+// lastWorkout.totalDuration = 10;
     const workoutSummary = {
       date: formatDate(lastWorkout.day),
       totalDuration: lastWorkout.totalDuration,
       numExercises: lastWorkout.exercises.length,
       ...tallyExercises(lastWorkout.exercises)
     };
-
+    console.log("workout summary:", workoutSummary);
     renderWorkoutSummary(workoutSummary);
   } else {
     renderNoWorkoutText()
@@ -56,8 +58,6 @@ function renderWorkoutSummary(summary) {
     totalReps: "Total Reps Performed",
     totalDistance: "Total Distance Covered"
   };
-
-  // console.log("total dur" + totalDuration);
 
   Object.keys(summary).forEach(key => {
     const p = document.createElement("p");
