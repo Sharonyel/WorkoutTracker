@@ -13,7 +13,7 @@ MongoDB, Mongoose Expres
 How To Use:
 ---
 
-![screenshot of the code](./public/assets/images/workouttracker.gif);
+<!-- ![screenshot of the code](./public/assets/images/workouttracker.gif); -->
 
 
 
